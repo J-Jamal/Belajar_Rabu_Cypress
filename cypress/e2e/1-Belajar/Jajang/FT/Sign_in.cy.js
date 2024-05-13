@@ -3,7 +3,7 @@
 //     cy.visit("https://magento.softwaretestingboard.com/");
 //     cy.contains("Sign In").click();
 //   });
-
+// test
 //   it("Verifikasi tidak dapat login dengan user yang tidak terdaftar", () => {
 //     cy.contains("Sign In").click();
 //     cy.get("#email").type("teamRabutest@test.com");
