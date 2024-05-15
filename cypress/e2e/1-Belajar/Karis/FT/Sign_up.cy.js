@@ -29,7 +29,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.successMessageRegist)
       .should("be.visible")
-      .should("contain", msg.registerSuccess);
+      .should("contain", msg.registerSuccess); //assertion
   });
 
   it("TC-2_Verifikasi tidak dapat membuat akun untuk masuk dengan invalid email_(NEGATIVE)", () => {
@@ -42,7 +42,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.ConfirmError)
       .should("be.visible")
-      .should("contain", msg.passwordConfirmError);
+      .should("contain", msg.passwordConfirmError); //assertion
   });
 
   it("TC-3_Verifikasi tidak dapat membuat akun untuk masuk dengan password hanya huruf_(NEGATIVE)", () => {
@@ -56,7 +56,7 @@ describe("User Registration Test Suite", () => {
     cy.get(account.paswdConfirm).type(userData.invalidUser2.password);
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password2);
+      .should("contain", msg.password2); //assertion
   });
 
   it("TC-4_Verifikasi tidak dapat membuat akun untuk masuk dengan password hanya angka_(NEGATIVE)", () => {
@@ -73,7 +73,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password2);
+      .should("contain", msg.password2); //assertion
   });
 
   it("TC-5_Verifikasi tidak dapat membuat akun untuk masuk dengan password dengan symbol_(NEGATIVE)", () => {
@@ -90,7 +90,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password2);
+      .should("contain", msg.password2); //assertion
   });
 
   it("TC-6_Verifikasi tidak dapat membuat akun untuk masuk dengan password dengan kombinasi huruf dan angka_(NEGATIVE)", () => {
@@ -107,7 +107,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password2);
+      .should("contain", msg.password2); //assertion
   });
 
   it("TC-7_Verifikasi tidak dapat membuat akun untuk masuk dengan password dengan kombinasi huruf dan symbol_(NEGATIVE)", () => {
@@ -124,7 +124,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password1);
+      .should("contain", msg.password1); //assertion
   });
 
   it("TC-8_Verifikasi tidak dapat membuat akun untuk masuk dengan password dengan kombinasi angka dan symbol_(NEGATIVE)", () => {
@@ -141,7 +141,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(account.InvalidFormat)
       .should("be.visible")
-      .should("contain", msg.password2);
+      .should("contain", msg.password2); //assertion
   });
 
   it("TC-9_Verifikasi tidak dapat membuat akun untuk masuk jika semua kolom kosong_(NEGATIVE)", () => {
@@ -162,7 +162,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get(".message-error")
       .should("be.visible")
-      .should("contain", msg.registerError3);
+      .should("contain", msg.registerError3); //assertion
   });
 
   it("TC-12_sembarangan_(NEGATIVE)", () => {
@@ -174,7 +174,7 @@ describe("User Registration Test Suite", () => {
     cy.get(submit).click();
     cy.get("#form-validate")
       .should("be.visible")
-      .should("contain", msg.registerError1);
+      .should("contain", msg.registerError1); //assertion
   });
 
   // Add more test cases for other scenarios related to user registration.

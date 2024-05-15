@@ -18,14 +18,14 @@ const possibleErrorMessages = [
 describe("[FT]_Login Functionality Test Suite", () => {
   beforeEach(() => {
     Navigation.visitAccount();
-    cy.clearCookies();
+    cy.clearAllCookies();
   });
 
   // **Positive Test Cases**
 
   it("TC-1_should allow login with valid credentials", () => {
     loginPage.login(userData.validUser.email, userData.validUser.password);
-    cy.get("#maincontent").should("contain", "My Account"); // Assert redirection to a specific page
+    cy.get("#maincontent").should("contain", "My Account"); //assertion
   });
 
   // **Negative Test Cases**
@@ -34,7 +34,7 @@ describe("[FT]_Login Functionality Test Suite", () => {
     const wrongEmails = [userData.invalidUser2.email];
     for (let i = 0; i < wrongEmails.length; i++) {
       loginPage.login(wrongEmails[i], userData.validUser.password);
-      cy.verifyErrorMessage(possibleErrorMessages);
+      cy.verifyErrorMessage(possibleErrorMessages); //assertion
       cy.wait(Math.random() * 2000 + 1000);
     }
   });
@@ -42,34 +42,34 @@ describe("[FT]_Login Functionality Test Suite", () => {
     const invalidPasswords = [userData.invalidUser1.password];
     for (let i = 0; i < invalidPasswords.length; i++) {
       loginPage.login(userData.validUser.email, invalidPasswords[i]);
-      cy.verifyErrorMessage(possibleErrorMessages);
+      cy.verifyErrorMessage(possibleErrorMessages); //assertion
       cy.wait(Math.random() * 2000 + 1000);
     }
   });
 
   it("TC-4_should not allow login with empty username and password", () => {
     cy.get("#send2").click();
-    cy.verifyErrorMessage(possibleErrorMessages);
+    cy.verifyErrorMessage(possibleErrorMessages); //assertion
   });
 
   it("TC-5_should not allow login with whitespace username", () => {
     const username = " ";
     loginPage.login(username, userData.validUser.password);
-    cy.verifyErrorMessage(possibleErrorMessages);
-    // cy.wait(Math.random() * 2000 + 1000);
+    cy.verifyErrorMessage(possibleErrorMessages); //assertion
+    cy.wait(Math.random() * 4000 + 1000);
   });
 
   it("TC-6_should not allow login with special characters in username", () => {
     const username = "invalid@username";
     loginPage.login(username, userData.validUser.password);
-    cy.verifyErrorMessage(possibleErrorMessages);
-    cy.wait(Math.random() * 2000 + 1000);
+    cy.verifyErrorMessage(possibleErrorMessages); //assertion
+    cy.wait(Math.random() * 4000 + 1000);
   });
 
   it("TC-7_should not allow login with exceeding password length (if applicable)", () => {
     const exceedingPassword = "longpasswordthatexceedsthelimit";
     loginPage.login(userData.validUser.email, exceedingPassword);
-    cy.verifyErrorMessage(possibleErrorMessages);
+    cy.verifyErrorMessage(possibleErrorMessages); //assertion
     cy.wait(Math.random() * 2000 + 1000);
   });
 
@@ -77,7 +77,7 @@ describe("[FT]_Login Functionality Test Suite", () => {
     const incompletePasswords = ["passwordwithout@"];
     incompletePasswords.forEach((password) => {
       loginPage.login(userData.validUser.email, password);
-      cy.verifyErrorMessage(possibleErrorMessages);
+      cy.verifyErrorMessage(possibleErrorMessages); //assertion
       cy.wait(Math.random() * 2000 + 1000);
     });
   });
@@ -90,7 +90,7 @@ describe("[FT]_Login Functionality Test Suite", () => {
     ];
     sqlInjectionAttempts.forEach((password) => {
       loginPage.login(userData.validUser.email, password);
-      cy.verifyErrorMessage(possibleErrorMessages);
+      cy.verifyErrorMessage(possibleErrorMessages); //assertion
       cy.wait(Math.random() * 2000 + 1000);
     });
   });
@@ -102,7 +102,7 @@ describe("[FT]_Login Functionality Test Suite", () => {
     ];
     xssAttempts.forEach((password) => {
       loginPage.login(userData.validUser.email, password);
-      cy.verifyErrorMessage(possibleErrorMessages);
+      cy.verifyErrorMessage(possibleErrorMessages); //assertion
       cy.wait(Math.random() * 2000 + 1000);
     });
   });

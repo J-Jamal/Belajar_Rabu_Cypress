@@ -38,7 +38,7 @@
   "accountMenuItems": ".page-header .customer-welcome > .customer-menu > .header > .authorization-link > a",
   "signedOutHeader": ".base",
   "successMessageCartLink": ".message-success > div > a",
-  "successMessageRegist": ".message-success > div",
+  "successMessageRegist": ".message-success",
   "messageContents": ".message span",
   "InvalidFormat": ".account > .password > .control",
   "ConfirmError": ".confirmation > .control",
