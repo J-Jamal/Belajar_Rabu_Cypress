@@ -55,5 +55,12 @@
     "email": "user7@test.com",
     "password": "66@@66@@",
     "password-confirmation": "66@@66@@"
+  },
+  "invalidUser8": {
+    "firstName": "user8",
+    "lastName": "user8",
+    "email": "user7@test.com",
+    "password": "12ab@@",
+    "password-confirmation": "12ab@@"
   }
 }
