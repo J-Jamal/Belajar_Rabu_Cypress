@@ -125,10 +125,10 @@ describe("Navigasi ke halaman create account", () => {
       cy.get('#password-confirmation-error').should('be.visible');
     });
 
-    // it('TC 13 - Negative TC : Create account tanpa mengisi field apapun & langsung submit', function() {
-    //   cy.get(submit).click();
-    //   cy.get(msg.registerError1).should('be.visible');
-    // });
+    it('TC 13 - Negative TC : Create account tanpa mengisi field apapun & langsung submit', function() {
+      cy.get(submit).click();
+      cy.get(msg.registerError1).should('be.visible');
+    });
 
     // it('TC 14 - Negative TC : Create account dengan register akun yang sudah pernah terdaftar', function() {
     //   cy.get(account.first).type(userData.invalidUser8.firstName);

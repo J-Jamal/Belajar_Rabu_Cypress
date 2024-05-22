@@ -61,6 +61,6 @@
     "lastName": "user8",
     "email": "user7@test.com",
     "password": "12ab@@",
-    "password-confirmation": "12ab@@"
+    "password-confirmation": "12abc@@"
   }
 }
