@@ -1,0 +1,198 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-05-21T18:04:37.150Z",
+    "end": "2024-05-21T18:04:38.423Z",
+    "duration": 1273,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "c536079b-32c8-4325-905f-5c81751b2dba",
+      "title": "",
+      "fullFile": "cypress\\e2e\\1-Belajar\\Homepage.cy.js",
+      "file": "cypress\\e2e\\1-Belajar\\Homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+          "title": "Homepage Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Buka halaman depan",
+              "fullTitle": "Homepage Test Suite Buka halaman depan",
+              "timedOut": null,
+              "duration": 1129,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".home-main > .content > .info\").should(\"be.visible\");\ncy.get(\".content-heading > .title\").should(\"be.visible\");",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo EAI_AGAIN magento.softwaretestingboard.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Homepage Test Suite`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://magento.softwaretestingboard.com/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo EAI_AGAIN magento.softwaretestingboard.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Homepage Test Suite`\n    at <unknown> (http://localhost:49919/__cypress/runner/cypress_runner.js:131480:74)\n    at visitFailedByErr (http://localhost:49919/__cypress/runner/cypress_runner.js:130878:12)\n    at <unknown> (http://localhost:49919/__cypress/runner/cypress_runner.js:131479:11)\n    at tryCatcher (http://localhost:49919/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49919/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:49919/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:49919/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:49919/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:49919/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:49919/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:49919/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:49919/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Navigation.visitHomepage (webpack://belajar_rabu_cypress/./cypress/support/PageObject/Navigation.js:4:7)\n    at Context.eval (webpack://belajar_rabu_cypress/./cypress/e2e/1-Belajar/Homepage.cy.js:11:15)\n\nFrom Node.js Internals:\n  Error: getaddrinfo EAI_AGAIN magento.softwaretestingboard.com\n      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:108:26)",
+                "diff": null
+              },
+              "uuid": "a8f510d5-489e-4987-b145-d43a8bb26a70",
+              "parentUUID": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Menampilkan hot selling pada halaman depan",
+              "fullTitle": "Homepage Test Suite Menampilkan hot selling pada halaman depan",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(\".content-heading > .title\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "88072951-1d4d-488b-93f4-8157a973b3ce",
+              "parentUUID": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Dapat mencari product",
+              "fullTitle": "Homepage Test Suite Dapat mencari product",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const productName = \"t-shirt\";\ncy.get(\"#search\").type(productName);\ncy.get('button[title=\"Search\"]').click();\ncy.url().should(\"include\", \"catalogsearch/result/\");\ncy.contains(\"h1\", `Search results for: '${productName}'`);",
+              "err": {},
+              "uuid": "5bec0f84-2f51-4af2-bd20-3a5c10e46ac4",
+              "parentUUID": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Menampilkan product populer pada halaman depan",
+              "fullTitle": "Homepage Test Suite Menampilkan product populer pada halaman depan",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(stuff).should(\"have.length.above\", 0);",
+              "err": {},
+              "uuid": "4cd26f55-001d-4a24-ba4e-3f0709cd329b",
+              "parentUUID": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Verifikasi banner iklan",
+              "fullTitle": "Homepage Test Suite Verifikasi banner iklan",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* ==== Generated with Cypress Studio ==== */\ncy.get(\".home-erin > .content > .info\").click();\ncy.get(\":nth-child(5) > .filter-options-title\").click();\ncy.get('[href=\"https://magento.softwaretestingboard.com/collections/erin-recommends.html?color=60\"] > .swatch-option').click();\ncy.get(\":nth-child(2) > .product-item-info\").should(\"be.visible\").should(\"contain\", \"Diva Gym Tee\");",
+              "err": {},
+              "uuid": "7c255007-eb30-4a7c-921c-3fa08d0e9917",
+              "parentUUID": "6b1978f8-a75c-49a3-882a-883ce5aac8a5",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a8f510d5-489e-4987-b145-d43a8bb26a70"
+          ],
+          "pending": [],
+          "skipped": [
+            "88072951-1d4d-488b-93f4-8157a973b3ce",
+            "5bec0f84-2f51-4af2-bd20-3a5c10e46ac4",
+            "4cd26f55-001d-4a24-ba4e-3f0709cd329b",
+            "7c255007-eb30-4a7c-921c-3fa08d0e9917"
+          ],
+          "duration": 1129,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reporterEnabled": "mochawesome",
+        "mochawesomeReporterOptions": {
+          "reportDir": "cypress/reports",
+          "quiet": true,
+          "overwrite": true,
+          "html": true,
+          "json": true,
+          "embeddedScreenshots": true,
+          "charts": true,
+          "reportPageTitle": "Cypress Inline Report",
+          "inlineAssets": true
+        },
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
