@@ -1,5 +1,5 @@
 // cypress/e2e/signin.cy.js
-/// <reference types="cypress" />
+// / <reference types="cypress" />
 
 import userData from "../../../../fixtures/data/userData.json";
 import Navigation from "../../../../support/PageObject/Navigation.js";
