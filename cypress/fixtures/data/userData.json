@@ -2,9 +2,9 @@
   "validUser": {
     "firstName": "kelompok",
     "lastName": "Rabu",
-    "email": "Ujicoba4@test.com",
-    "password": "test12345678!",
-    "password-confirmation": "test@1234"
+    "email": "Ujicoba5@test.com",
+    "password": "coba123456@",
+    "password-confirmation": "coba123456@"
   },
 
   "invalidUser1": {
