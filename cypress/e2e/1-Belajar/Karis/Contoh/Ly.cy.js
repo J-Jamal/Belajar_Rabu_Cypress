@@ -33,22 +33,24 @@ describe("User Masuk Ke Halaman Create Account", () => {
     cy.clearCookies();
   });
 
-  //   // TC - 02 User Create Account tanpa memasukan password dan muncul error notif - NEGATIVE
-  //   it("TC - 02 Create Account tanpa memasukan password", function () {
-  //     cy.get(".panel > .header > :nth-child(3) > a")
-  //       .should("be.visible")
-  //       .should("contain", "Create an Account")
-  //       .click();
-  //     cy.get("#firstname").type("coba2");
-  //     cy.get("#lastname").type("apaja");
-  //     cy.get("#email_address").type("coba111412113@gmail.com");
-  //     cy.get(
-  //       "#form-validate > .actions-toolbar > div.primary > .action > span"
-  //     ).click();
-  //     cy.get("#password-error")
-  //       .should("be.visible")
-  //       .should("contain", "This is a required field"); //Menampilkan pesan password
-  //   });
+  // TC - 02 User Create Account tanpa memasukan password dan muncul error notif - NEGATIVE
+  it("TC - 02 Create Account tanpa memasukan password", function () {
+    cy.get(".panel > .header > :nth-child(3) > a")
+      .should("be.visible")
+      .should("contain", "Create an Account")
+      .click();
+    cy.get("#firstname").type("coba2");
+    cy.get("#lastname").type("apaja");
+    cy.get("#email_address").type("Ujicoba5@test.com");
+    cy.get("#password").type("coba123456@");
+    cy.get("#password-confirmation").type("coba123456@");
+    cy.get(
+      "#form-validate > .actions-toolbar > div.primary > .action > span"
+    ).click();
+    // cy.get("#password-error")
+    //   .should("be.visible")
+    //   .should("contain", "This is a required field"); //Menampilkan pesan password
+  });
 
   //   // TC - 03 User Create Account tanpa memasukan email muncul Notif error  - NEGATIVE
   //   it("TC-03 TC - 03 User Create Account tanpa memasukan email muncul Notif error", function () {
