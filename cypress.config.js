@@ -36,18 +36,15 @@ module.exports = defineConfig({
         console.log("override after:run");
         await afterRunHook();
       });
-      config.specPattern = [
-
-        // "cypress/e2e/1-Belajar/karis/FT/Login.cy.js",
-        // "cypress/e2e/1-Belajar/karis/Non_FT/API.cy.js",
-        "cypress/e2e/1-Belajar/Denny/FT/register.cy.js",
-
-      ];
-      return config;
+      // config.specPattern = [
+      //   "cypress/e2e/1-Belajar/karis/FT/Login.cy.js",
+      //   "cypress/e2e/1-Belajar/karis/Non_FT/API.cy.js",
+      // ];
+      // return config;
     },
 
-    viewportHeight: 768,
-    viewportWidth: 1500,
+    viewportHeight: 800,
+    viewportWidth: 1700,
     experimentalStudio: true,
   },
 });

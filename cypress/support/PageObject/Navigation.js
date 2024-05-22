@@ -48,6 +48,9 @@ class Navigation {
   getSubmit() {
     return "#form-validate > .actions-toolbar > div.primary > .action";
   }
+  loginSubmit() {
+    return ".login-container > .block-customer-login > .block-content > #login-form > .fieldset > .actions-toolbar > div.primary > #send2";
+  }
 }
 
 export default new Navigation();
