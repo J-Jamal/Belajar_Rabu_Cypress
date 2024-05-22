@@ -6,7 +6,7 @@ const {
 } = require("cypress-mochawesome-reporter/lib");
 
 module.exports = defineConfig({
-  projectId: "8u86z2",
+  projectId: "vr1nhy",
   reporter: "cypress-mochawesome-reporter",
   reporterOptions: {
     reporterEnabled: "mochawesome",
